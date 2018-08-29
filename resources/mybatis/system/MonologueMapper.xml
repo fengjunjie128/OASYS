@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MonologueMapper">
+	<!--表名 -->
+	<sql id="tableName">
+		TB_MONOLOGUE
+	</sql>
+
+	<!-- 字段 -->
+	<sql id="Field">
+		TAG_ID,
+		TAG_NAME,
+		START_DATE,
+		END_DATE,
+		STATUS,
+		TAG_AUTHOR,
+		REMARK
+	</sql>
+
+	<!-- 字段值 -->
+	<sql id="FieldValue">
+		#{TAG_ID},
+		#{TAG_NAME},
+		#{START_DATE},
+		#{END_DATE},
+		#{STATUS},
+		#{TAG_AUTHOR},
+		#{REMARK}
+	</sql>
+
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+		a.TAG_ID,
+		a.TAG_NAME,
+		a.START_DATE,
+		a.END_DATE,
+		a.STATUS,
+		a.TAG_AUTHOR,
+		a.REMARK,
+		b.NAME
+		from
+		<include refid="tableName"></include>
+		a,sys_user b
+		where 1 = 1
+		and a.TAG_AUTHOR = b.username
+		<if test="pd.KEYW != null and pd.KEYW != ''"><!-- 关键词检索 -->
+			and
+			(
+			a.TAG_NAME LIKE CONCAT(CONCAT('%', #{pd.KEYW}),'%')
+			or
+			a.TAG_AUTHOR LIKE CONCAT(CONCAT('%', #{pd.KEYW}),'%')
+			or 
+		    b.name like CONCAT(CONCAT('%', #{pd.KEYW}),'%')
+			)
+			order by a.status desc,a.START_DATE desc
+		</if>
+	</select>
+	
+	<!-- 列表 -->
+	<select id="show" parameterType="pd" resultType="pd">
+		select
+		a.TAG_ID,
+		a.TAG_NAME,
+		a.START_DATE,
+		a.END_DATE,
+		a.STATUS,
+		a.TAG_AUTHOR,
+		a.REMARK,
+		b.NAME
+		from
+		<include refid="tableName"></include>
+		a,sys_user b
+		where 1 = 1
+		and a.TAG_AUTHOR = b.username
+		and a.status = '0'
+		order by a.status desc,a.START_DATE desc
+	</select>
+
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"></include>
+		from
+		<include refid="tableName"></include>
+		where
+		TAG_ID = #{TAG_ID}
+	</select>
+
+	<!-- 新增 -->
+	<insert id="save" parameterType="pd">
+		insert into
+		<include refid="tableName"></include>
+		(
+		<include refid="Field"></include>
+		) values (
+		<include refid="FieldValue"></include>
+		)
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="pd">
+		delete from
+		<include refid="tableName"></include>
+		where
+		TAG_ID = #{TAG_ID}
+	</delete>
+
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update
+		<include refid="tableName"></include>
+		set
+		<if test="STATUS != null and END_DATE != ''">
+			END_DATE = #{END_DATE},
+		</if>
+		<if test="STATUS != null and STATUS != ''">
+			STATUS = #{STATUS},
+		</if>
+		<if test="REMARK != null and REMARK != ''">
+			REMARK = #{REMARK},
+		</if>
+		TAG_NAME = #{TAG_NAME}
+		where
+		TAG_ID = #{TAG_ID}
+	</update>
+
+
+</mapper>
