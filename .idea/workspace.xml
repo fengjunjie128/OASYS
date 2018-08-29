@@ -11,7 +11,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/menu/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="319">
@@ -19,6 +19,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/fh/test1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -43,6 +52,16 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -54,6 +73,7 @@
         <option value="$PROJECT_DIR$/src/com/fh/controller/system/login/LoginController.java" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/system/menu/menu_edit.jsp" />
         <option value="$PROJECT_DIR$/src/com/fh/controller/system/menu/MenuController.java" />
+        <option value="$PROJECT_DIR$/src/com/fh/test1.java" />
       </list>
     </option>
   </component>
@@ -77,12 +97,13 @@
       <path value="$PROJECT_DIR$/WebRoot/static/html_UI/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="y" value="13" />
     <option name="width" value="1386" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -100,24 +121,6 @@
             <path>
               <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
               <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -125,73 +128,6 @@
               <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="fh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OASYS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OASYS1" type="b2602c69:ProjectViewProjectNode" />
@@ -450,15 +386,15 @@
       <workItem from="1535432086735" duration="1836000" />
       <workItem from="1535434950735" duration="16146000" />
       <workItem from="1535467119415" duration="3942000" />
-      <workItem from="1535505391610" duration="22461000" />
+      <workItem from="1535505391610" duration="22505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47099000" />
+    <option name="totallyTimeSpent" value="47143000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -471,8 +407,8 @@
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.24183007" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14542484" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14566284" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -505,13 +441,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/mybatis/system/RoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -840,6 +769,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
     </entry>
