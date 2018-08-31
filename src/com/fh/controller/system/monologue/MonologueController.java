@@ -1,10 +1,7 @@
 package com.fh.controller.system.monologue;
 
 import java.io.PrintWriter;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.Resource;
 
@@ -117,7 +114,7 @@ public class MonologueController extends BaseController{
 		return AppUtil.returnObject(new PageData(), map);
 	}
 	
-	
+
 	/**新增
 	 * @return
 	 * @throws Exception
@@ -138,7 +135,7 @@ public class MonologueController extends BaseController{
 		return mv;
 	}
 	
-	/**修改用户
+	/**修改
 	 * @param out
 	 * @return
 	 * @throws Exception
@@ -184,7 +181,7 @@ public class MonologueController extends BaseController{
 		return mv;
 	}
 	
-	/**去修改用户页面
+	/**去修改页面
 	 * @return
 	 */
 	@RequestMapping(value="/goEditU")
@@ -204,5 +201,43 @@ public class MonologueController extends BaseController{
 		}						
 		return mv;
 	}
+
+
+
+	/**批量删除monologue
+	 * @param
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteM")
+        public void deleteM(PrintWriter out) throws Exception{
+          //  if(!Jurisdiction.buttonJurisdiction(menuUrl, "del")){return;} //校验权限
+            logBefore(logger, "删除monologue");
+            PageData pd = new PageData();
+            pd = this.getPageData();
+            monologueService.delete(pd);
+            out.write("success");
+            out.close();
+        }
+
+
+    @RequestMapping(value="/deleteAll")
+    @ResponseBody
+    public Object deleteAll() throws Exception{
+        logBefore(logger, "批量删除monologue");
+        PageData pd = new PageData();
+        pd = this.getPageData();
+        Map<String,Object> map1=new HashMap<>();
+        List<PageData> pdList1 = new ArrayList<PageData>();
+
+        String DATA_IDS = pd.getString("DATA_IDS");
+        if (null!=DATA_IDS&&!"".equals(DATA_IDS)){
+            String  ArrayDATA_IDS[]=DATA_IDS.split(",");
+            monologueService.deleteAllM(ArrayDATA_IDS);
+        }
+        pdList1.add(pd);
+        map1.put("list", pdList1);
+        return AppUtil.returnObject(pd, map1);
+
+    }
 
 }

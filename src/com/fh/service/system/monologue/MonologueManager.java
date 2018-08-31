@@ -47,7 +47,7 @@ public interface MonologueManager {
 	 * @param ArrayDATA_IDS
 	 * @throws Exception
 	 */
-	public void deleteAll(String[] ArrayDATA_IDS)throws Exception;
+	public void deleteAllM(String[] ArrayDATA_IDS)throws Exception;
 	
 	/**批量获取
 	 * @param ArrayDATA_IDS

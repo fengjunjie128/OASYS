@@ -115,10 +115,6 @@ public class MenuController extends BaseController {
 			logger.error(e.toString(), e);
 			mv.addObject("msg","failed");
 		}
-//		if (menu.getPARENT_ID()==null||"".equals(menu.getPARENT_ID())||menu.getPARENT_ID() == "0"){
-//			mv.setViewName("redirect:?MSG='change'&MENU_ID="+menu.getPARENT_ID()); //保存成功跳转到列表页面
-//		}else {
-//		}
 	//	mv.setViewName("redirect:?MSG='change'&MENU_ID="+menu.getPARENT_ID()); //保存成功跳转到列表页面
 		mv.setViewName("forward:?MSG='change'&MENU_ID="+menu.getPARENT_ID());//保存成功跳转到列表页面
 		System.out.println(mv.getViewName());
@@ -194,12 +190,7 @@ public class MenuController extends BaseController {
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
-//         if (menu.getPARENT_ID()==null||"".equals(menu.getPARENT_ID())||menu.getPARENT_ID() == "0"){
-//			mv.setViewName("system/menu/menu_list");
-//		}else {
-//			mv.setViewName("redirect:?MSG='change'&MENU_ID="+menu.getPARENT_ID()); //保存成功跳转到列表页面
-//			  System.out.println("menugetparentid"+menu.getPARENT_ID());
-//		}
+
 		mv.setViewName("forward:?MSG='change'&MENU_ID="+menu.getPARENT_ID()); //保存成功跳转到列表页面
 		return mv;
 	}

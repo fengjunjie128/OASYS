@@ -106,6 +106,16 @@
 		TAG_ID = #{TAG_ID}
 	</delete>
 
+	<!-- 批量删除 -->
+	<delete id="deleteAllM" parameterType="String">
+		delete from <include refid="tableName"></include>
+		where  TAG_ID in
+		<foreach  item="item" index="index" collection="array" open="(" separator="," close=")">
+		     #{item}
+		</foreach>
+
+	</delete>
+
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update
@@ -124,6 +134,9 @@
 		where
 		TAG_ID = #{TAG_ID}
 	</update>
+
+
+
 
 
 </mapper>

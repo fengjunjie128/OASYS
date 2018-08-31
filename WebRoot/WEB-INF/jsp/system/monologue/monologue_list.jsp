@@ -203,10 +203,9 @@
 		
 		//删除
 		function del(Id,PATH){
-			
 			if(confirm("确定要删除?")){ 
 				top.jzts();
-				var url = "<%=basePath%>monologue/delete.do?TAG_ID="+Id+"&PATH="+PATH+"&tm="+new Date().getTime();
+				var url = "<%=basePath%>monologue/deleteM.do?TAG_ID="+Id+"&PATH="+PATH+"&tm="+new Date().getTime();
 				$.get(url,function(data){
 					nextPage(${page.currentPage});
 				});

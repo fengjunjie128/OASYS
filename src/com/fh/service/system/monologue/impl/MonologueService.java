@@ -86,8 +86,8 @@ public class MonologueService implements MonologueManager {
 	 * @throws Exception
 	 */
 	@Override
-	public void deleteAll(String[] ArrayDATA_IDS)throws Exception{
-		dao.delete("MonologueMapper.deleteAll", ArrayDATA_IDS);
+	public void deleteAllM(String[] ArrayDATA_IDS)throws Exception{
+		dao.delete("MonologueMapper.deleteAllM", ArrayDATA_IDS);
 	}
 	
 	/**批量获取
