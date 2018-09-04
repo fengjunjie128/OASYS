@@ -43,7 +43,12 @@ public class MonologueService implements MonologueManager {
 	public List<PageData> show(Page page)throws Exception{
 		return (List<PageData>)dao.findForList("MonologueMapper.show", page);
 	}
-	
+
+	@Override
+	public List<PageData> show1(Page page) throws Exception {
+		return (List<PageData>)dao.findForList("MonologueMapper.show1", page);
+	}
+
 	/**新增
 	 * @param pd
 	 * @throws Exception

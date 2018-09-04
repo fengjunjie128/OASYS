@@ -28,7 +28,7 @@
 		#{REMARK}
 	</sql>
 
-	<!-- 列表 -->
+	<!-- 列表  全部的-->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select
 		a.TAG_ID,
@@ -57,7 +57,7 @@
 		</if>
 	</select>
 	
-	<!-- 列表 -->
+	<!-- 列表 状态失效（status=0）-->
 	<select id="show" parameterType="pd" resultType="pd">
 		select
 		a.TAG_ID,
@@ -74,6 +74,26 @@
 		where 1 = 1
 		and a.TAG_AUTHOR = b.username
 		and a.status = '0'
+		order by a.status desc,a.START_DATE desc
+	</select>
+
+	<!-- 列表 状态有效（status=1）-->
+	<select id="show1" parameterType="pd" resultType="pd">
+		select
+		a.TAG_ID,
+		a.TAG_NAME,
+		a.START_DATE,
+		a.END_DATE,
+		a.STATUS,
+		a.TAG_AUTHOR,
+		a.REMARK,
+		b.NAME
+		from
+		<include refid="tableName"></include>
+		a,sys_user b
+		where 1 = 1
+		and a.TAG_AUTHOR = b.username
+		and a.status = '1	'
 		order by a.status desc,a.START_DATE desc
 	</select>
 

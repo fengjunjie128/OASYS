@@ -90,8 +90,9 @@
 						<tbody>
 						<!-- 开始循环 -->	
 						<c:choose>
-							<c:when test="${not empty varList}">
+							<c:when test="${not empty varList}" >
 								<c:if test="${QX.cha == 1 }">
+
 								<c:forEach items="${varList}" var="var" varStatus="vs">
 									<tr>
 										<td class='center'>

@@ -190,7 +190,7 @@ public class MonologueController extends BaseController{
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		try {
-			List<PageData>	userList = userService.listAllUser(pd);	//列出用户列表
+			List<PageData> userList = userService.listAllUser(pd);	//列出用户列表
 			pd = monologueService.findById(pd);		
 			mv.addObject("userList", userList);
 			mv.setViewName("system/monologue/monologue_edit");
@@ -204,7 +204,7 @@ public class MonologueController extends BaseController{
 
 
 
-	/**批量删除monologue
+	/**删除monologue
 	 * @param
 	 * @throws Exception
 	 */
@@ -219,6 +219,10 @@ public class MonologueController extends BaseController{
             out.close();
         }
 
+    /**批量删除monologue
+     * @param
+     * @throws Exception
+     */
 
     @RequestMapping(value="/deleteAll")
     @ResponseBody
@@ -237,7 +241,6 @@ public class MonologueController extends BaseController{
         pdList1.add(pd);
         map1.put("list", pdList1);
         return AppUtil.returnObject(pd, map1);
-
     }
 
 }

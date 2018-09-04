@@ -65,5 +65,8 @@ public interface MonologueManager {
 	public List<PageData> show(Page page) throws Exception;
 
 
+	public List<PageData> show1(Page page)throws  Exception;
+
+
 }
 
