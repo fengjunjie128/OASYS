@@ -69,8 +69,8 @@ public class AppuserController extends BaseController {
 			mv.addObject("roleList", roleList);
 			mv.addObject("pd", pd);
 			mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
-			System.out.println("------"+userList);
-			System.out.println("------"+roleList);
+			System.out.println("appuser-----------"+mv.toString());
+
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
@@ -101,7 +101,7 @@ public class AppuserController extends BaseController {
 	 */
 	@RequestMapping(value="/saveU")
 	public ModelAndView saveU() throws Exception{
-		if(!Jurisdiction.buttonJurisdiction(menuUrl, "add")){return null;} //校验权限
+		if(!Jurisdiction.buttonJurisdiction(menuUrl, "save")){return null;} //校验权限
 		logBefore(logger, Jurisdiction.getUsername()+"新增会员");
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();

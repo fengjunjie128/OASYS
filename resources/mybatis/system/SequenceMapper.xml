@@ -5,5 +5,9 @@
  <select id="getSpellFull" parameterType="pd" resultType="java.lang.String">
 	  SELECT CONCAT(date_format(now(), '%Y%m%d'),LPAD(NEXTVAL('TestSeq'),8,'0'))
  </select>
+
+    <select id="getSpellFull1" parameterType="pd" resultType="java.lang.String">
+        SELECT CONCAT(date_format(now(), '%Y%m%d'),LPAD(NEXTVAL('TestSeq'),8,'0'))
+    </select>
 	
 </mapper>

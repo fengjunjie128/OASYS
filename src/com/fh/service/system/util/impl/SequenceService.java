@@ -21,8 +21,11 @@ public class SequenceService implements SequenceManager{
 	private DaoSupport dao;
 	
 	public String getById(PageData pd) throws Exception {
-		System.out.println("----------------------"+pd);
 		return (String) dao.findOne("SequenceMapper.getSpellFull", pd);
+	}
+
+	public String getByIdB(PageData pd) throws Exception {
+		return (String) dao.findOne("SequenceMapper.getSpellFull1", pd);
 	}
 
 	

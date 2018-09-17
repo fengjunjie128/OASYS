@@ -62,6 +62,7 @@ public interface MonologueManager {
 	 */
 	public void delTp(PageData pd)throws Exception;
 
+
 	public List<PageData> show(Page page) throws Exception;
 
 

@@ -46,21 +46,13 @@ public class UserService implements UserManager{
 		dao.update("UserMapper.updateLastLogin", pd);
 	}
 	
-	/**通过用户ID获取用户信息和角色信息
-	 * @param USER_ID
-	 * @return
-	 * @throws Exception
-	 */
+
 	@Override
 	public User getUserAndRoleById(String USER_ID) throws Exception {
 		return (User) dao.findForObject("UserMapper.getUserAndRoleById", USER_ID);
 	}
 	
-	/**通过USERNAEME获取数据
-	 * @param pd
-	 * @return
-	 * @throws Exception
-	 */
+
 	@Override
 	public PageData findByUsername(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("UserMapper.findByUsername", pd);

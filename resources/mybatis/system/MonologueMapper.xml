@@ -93,7 +93,7 @@
 		a,sys_user b
 		where 1 = 1
 		and a.TAG_AUTHOR = b.username
-		and a.status = '1	'
+		and a.status = '1'
 		order by a.status desc,a.START_DATE desc
 	</select>
 
@@ -154,7 +154,6 @@
 		where
 		TAG_ID = #{TAG_ID}
 	</update>
-
 
 
 

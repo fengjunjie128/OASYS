@@ -17,4 +17,7 @@ public interface SequenceManager {
 
 	@Select("SELECT NEXTVAL(#{id})")
 	public String getById(PageData pd) throws Exception;
+
+	@Select("SELECT NEXTVAL(#{id})")
+	public String getByIdB(PageData pd) throws Exception;
 }

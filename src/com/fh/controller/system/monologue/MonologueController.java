@@ -128,7 +128,6 @@ public class MonologueController extends BaseController{
 		pd = this.getPageData();
 		pd.put("TAG_ID", sequenceService.getById(pd));	//主键
 		pd.put("START_DATE", Tools.date2Str(new Date())); //创建时间
-		System.out.println("-----"+pd);
 		monologueService.save(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
@@ -175,6 +174,7 @@ public class MonologueController extends BaseController{
 			mv.setViewName("system/monologue/monologue_edit");
 			mv.addObject("msg", "save");
 			mv.addObject("pd", pd);
+
 		} catch (Exception e) {
 			logger.error(e.toString(), e);
 		}						
@@ -210,7 +210,7 @@ public class MonologueController extends BaseController{
 	 */
 	@RequestMapping(value="/deleteM")
         public void deleteM(PrintWriter out) throws Exception{
-          //  if(!Jurisdiction.buttonJurisdiction(menuUrl, "del")){return;} //校验权限
+            if(!Jurisdiction.buttonJurisdiction(menuUrl, "del")){return;} //校验权限
             logBefore(logger, "删除monologue");
             PageData pd = new PageData();
             pd = this.getPageData();

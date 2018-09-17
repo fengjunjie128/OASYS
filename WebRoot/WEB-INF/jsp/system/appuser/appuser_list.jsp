@@ -197,6 +197,9 @@
 							</c:choose>
 							</tbody>
 						</table>
+
+
+
 						<div class="page-header position-relative">
 						<table style="width:100%;">
 							<tr>
@@ -214,6 +217,7 @@
 							</tr>
 						</table>
 						</div>
+
 						</form>
  						</div>
 						<!-- /.col -->

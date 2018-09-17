@@ -712,6 +712,107 @@ insert  into `WEIXIN_TEXTMSG`(`TEXTMSG_ID`,`KEYWORD`,`CONTENT`,`CREATETIME`,`STA
 ('695cd74779734231928a253107ab0eeb','吃饭','吃了噢噢噢噢','2015-05-10 22:52:27',1,'文本回复'),
 ('d4738af7aea74a6ca1a5fb25a98f9acb','关注','这里是关注后回复的内容','2015-05-11 02:12:36',1,'关注回复');
 
+
+
+DROP TABLE IF EXISTS `TB_BK`;
+CREATE TABLE TB_BK(
+  `BK_ID` varchar(20) NOT NULL,
+  `BK_TITLE` varchar(100) DEFAULT NULL,
+  `BK_PROCESS_P` varchar(10) DEFAULT NULL,
+  `BK_REPORT_P` varchar(10) DEFAULT NULL,
+  `BK_TIME` date DEFAULT NULL,
+  `BK_SUBSYS` varchar(50) DEFAULT NULL,
+  `BK_REP_STATUS` char(1) DEFAULT '0' COMMENT '0:故障报告登记，1：提交审核,2:审核不通过，3,审核通过',
+  `BK_DETAIL_DESCI` varchar(1000) DEFAULT NULL,
+  `BK_INFLU` varchar(1000) DEFAULT NULL,
+  `BK_PROCE_PROCE` varchar(1000) DEFAULT NULL,
+  `BK_ANALYSISANDSUMMARY` varchar(1000) DEFAULT NULL,
+  `BK_AFTERANDARRANGE` varchar(1000) DEFAULT NULL,
+  `BK_AUDITOPINION` varchar(1000) DEFAULT NULL,
+  `BK_PANELAUDITOR` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`BK_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO  `TB_BK`(`BK_ID`,`BK_TITLE`,`BK_PROCESS_P`,`BK_REPORT_P`,`BK_TIME`,`BK_SUBSYS`,`BK_REP_STATUS`,`BK_DETAIL_DESCI`,`BK_INFLU`,`BK_PROCE_PROCE`,`BK_ANALYSISANDSUMMARY`,`BK_AFTERANDARRANGE`,`BK_AUDITOPINION`,`BK_PANELAUDITOR`) values('20180830523','web调用esp超时','liangjy','cuirz','2018-08-30','15','0','2018-08-30 9点~11点左右，web调用esp超时。','前台','之前加固起的主机防火墙服务，业务服务请求过多，会导致iptables系统服务的内存溢出，已经临时关掉了--方瑞','无','无','无',NULL);
+
+DROP TABLE IF EXISTS `SYS_SUBSYS`;
+CREATE TABLE SYS_SUBSYS(
+`SYBSYS_ID` CHAR(2)  NOT NULL,
+`SYBSYS_NAME` varchar(10) NOT NULL,
+PRIMARY KEY (`SYBSYS_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `SYS_SUBSYS`(`SYBSYS_ID`,`SYBSYS_NAME`)VALUES ('1','NG框架'),('2','集团业务'),('3','个人业务'),('4','一级BOSS'),('5','电子渠道'),('6','携号转网'),('7','营销系统'),('8','资源系统'),('9','计费系统'),('10','统计'),('11','账务管理'),('12','信用控制'),('13','客户管理'),('14','客服系统'),('15','外围接口'),('16','账务处理'),('17','渠道系统'),('18','结算系统'),('19','其他系统');
+
+DROP TABLE IF EXISTS `TB_CUT`;
+CREATE TABLE TB_CUT(
+  `CUT_ID` varchar(20) NOT NULL,
+  `CUT_TITLE` varchar(100) DEFAULT NULL,
+  `CUT_RESP_P` varchar(10) DEFAULT NULL,
+  `IT_CUT_RESP_P` varchar(10) DEFAULT NULL,
+  `CUT_TIME` date DEFAULT NULL,
+  `CUT_MEMBER` varchar(300) DEFAULT NULL,
+  `CUT_IT_VERIFIER` varchar(10) DEFAULT NULL,
+  `CUT_DETAIL_DESCI` varchar(1000) DEFAULT NULL,
+  `CUT_INFLU` varchar(1000) DEFAULT NULL,
+  `CUT_PROCE_PROCE` varchar(1000) DEFAULT NULL,
+  `CUT_ANALYSISANDSUMMARY` varchar(1000) DEFAULT NULL,
+  `CUT_AFTERANDARRANGE` varchar(1000) DEFAULT NULL,
+  `CUT_REPORT_RESP_P` varchar(10) DEFAULT NULL,
+  `CUT_REPORT_BUILD_TIME` date DEFAULT NULL,
+  PRIMARY KEY (`CUT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO  `TB_CUT`(`CUT_ID`, `CUT_TITLE` ,`CUT_RESP_P`, `IT_CUT_RESP_P` , `CUT_TIME`, `CUT_MEMBER` , `CUT_IT_VERIFIER` , `CUT_DETAIL_DESCI`  ,`CUT_INFLU` , `CUT_PROCE_PROCE`, `CUT_ANALYSISANDSUMMARY`, `CUT_AFTERANDARRANGE`  ,`CUT_REPORT_RESP_P`  , `CUT_REPORT_BUILD_TIME`)values ('2018091300000170','1234','cuirz','zhangjian3','2018-09-18','1111','liangjy','111','11','11','强强强强','111','admin','2018-09-12')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Function  structure for function  `currval` */
 
 /*!50003 DROP FUNCTION IF EXISTS `currval` */;
@@ -720,12 +821,12 @@ DELIMITER $$
 /*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `currval`(seq_name VARCHAR(50)) RETURNS int(11)
     DETERMINISTIC
 BEGIN
-     DECLARE value INTEGER; 
-     SET value = 0; 
-     SELECT current_value INTO value 
+     DECLARE value INTEGER;
+     SET value = 0;
+     SELECT current_value INTO value
           FROM sequence
-          WHERE name = seq_name; 
-     RETURN value; 
+          WHERE name = seq_name;
+     RETURN value;
 END */$$
 DELIMITER ;
 
@@ -738,9 +839,9 @@ DELIMITER $$
     DETERMINISTIC
 BEGIN
      UPDATE sequence
-          SET current_value = current_value + increment 
-          WHERE name = seq_name; 
-     RETURN currval(seq_name); 
+          SET current_value = current_value + increment
+          WHERE name = seq_name;
+     RETURN currval(seq_name);
 END */$$
 DELIMITER ;
 
@@ -753,9 +854,9 @@ DELIMITER $$
     DETERMINISTIC
 BEGIN
      UPDATE sequence
-          SET current_value = value 
-          WHERE name = seq_name; 
-     RETURN currval(seq_name); 
+          SET current_value = value
+          WHERE name = seq_name;
+     RETURN currval(seq_name);
 END */$$
 DELIMITER ;
 
@@ -766,45 +867,45 @@ DELIMITER ;
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `uppercase`(IN dbname VARCHAR(200))
-BEGIN  
-   
-DECLARE done INT DEFAULT 0;   
-   
-DECLARE oldname VARCHAR(200);   
-   
-DECLARE cur CURSOR FOR SELECT table_name FROM information_schema.TABLES WHERE table_schema = dbname;   
-   
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;   
-   
-OPEN cur;   
-   
-REPEAT   
-   
-FETCH cur INTO oldname;   
-   
-SET @newname = UPPER(oldname);   
-   
-#IF newname equals to oldname, do nothing;   
-#select 'a' <> 'A'; -> 0   
-#select 'a' <> BINARY 'A'; -> 1   
-SET @isNotSame = @newname <> BINARY oldname;   
-   
-IF NOT done && @isNotSame THEN  
-   
-SET @SQL = CONCAT('rename table ',oldname,' to ',@newname);   
-   
-PREPARE tmpstmt FROM @SQL;   
-   
-EXECUTE tmpstmt;   
-   
-DEALLOCATE PREPARE tmpstmt;   
-   
-END IF;   
-   
-UNTIL done END REPEAT;   
-   
-CLOSE cur;   
-   
+BEGIN
+
+DECLARE done INT DEFAULT 0;
+
+DECLARE oldname VARCHAR(200);
+
+DECLARE cur CURSOR FOR SELECT table_name FROM information_schema.TABLES WHERE table_schema = dbname;
+
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+OPEN cur;
+
+REPEAT
+
+FETCH cur INTO oldname;
+
+SET @newname = UPPER(oldname);
+
+#IF newname equals to oldname, do nothing;
+#select 'a' <> 'A'; -> 0
+#select 'a' <> BINARY 'A'; -> 1
+SET @isNotSame = @newname <> BINARY oldname;
+
+IF NOT done && @isNotSame THEN
+
+SET @SQL = CONCAT('rename table ',oldname,' to ',@newname);
+
+PREPARE tmpstmt FROM @SQL;
+
+EXECUTE tmpstmt;
+
+DEALLOCATE PREPARE tmpstmt;
+
+END IF;
+
+UNTIL done END REPEAT;
+
+CLOSE cur;
+
 END */$$
 DELIMITER ;
 
