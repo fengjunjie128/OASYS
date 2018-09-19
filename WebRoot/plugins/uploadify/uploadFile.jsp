@@ -32,7 +32,7 @@
 				name = item.getName();
 				long size = item.getSize();
 				String type = item.getContentType();
-				//System.out.println(size + " " + type);
+
 				if (name == null || name.trim().equals("")) {
 					continue;
 				}

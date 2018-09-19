@@ -90,7 +90,7 @@ public class LoginController extends BaseController {
 		pd = this.getPageData();
 		String errInfo = "";
 		String KEYDATA[] = pd.getString("KEYDATA").split("#");
-		System.out.println("------login_login-----------"+KEYDATA[2]);
+
 		if(null != KEYDATA && KEYDATA.length == 3){
 			Session session = Jurisdiction.getSession();
 			String sessionCode = session.getAttribute(Const.SESSION_SECURITY_CODE)+"";		//获取session中的验证码
@@ -159,7 +159,7 @@ public class LoginController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		System.out.println("========  =======1==");
+
 		try{
 			Session session = Jurisdiction.getSession();
 			User user = (User)session.getAttribute(Const.SESSION_USER);				//读取session中的用户信息(单独用户信息)
@@ -207,7 +207,7 @@ public class LoginController extends BaseController {
 							menuList2.add(menu);
 						}
 					}
-					System.out.println("munuList2"+menuList2.toString());
+
 					session.removeAttribute(USERNAME + Const.SESSION_menuList);
 					if("2".equals(session.getAttribute("changeMenu"))){
 						session.setAttribute(USERNAME + Const.SESSION_menuList, menuList1);
@@ -232,7 +232,7 @@ public class LoginController extends BaseController {
 				mv.setViewName("system/index/main");
 				mv.addObject("user", user);
 				mv.addObject("menuList", menuList);
-				System.out.println(menuList.toString());
+
 			}else {
 				return new ModelAndView("redirect:/login_toLogin");
 			}
@@ -244,7 +244,6 @@ public class LoginController extends BaseController {
 
 
 
-		System.out.println("==============4==="+mv);
 		return mv;
 	}
 	

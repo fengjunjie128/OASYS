@@ -326,7 +326,6 @@ public class UserController extends BaseController{
 		pd = this.getPageData();
 		List<PageData> pdList = new ArrayList<PageData>();
 		String USER_IDS = pd.getString("USER_IDS");
-		System.out.println("--------USER_IDS-----"+USER_IDS);
 		if(null != USER_IDS && !"".equals(USER_IDS)){
 			String ArrayUSER_IDS[] = USER_IDS.split(",");
 			userService.deleteAllU(ArrayUSER_IDS);
@@ -361,7 +360,6 @@ public class UserController extends BaseController{
 				if(lastLoginEnd != null && !"".equals(lastLoginEnd)){
 					pd.put("lastLoginEnd", lastLoginEnd+" 00:00:00");
 				} 
-				System.out.println("---------------pd-----"+pd);
 				Map<String,Object> dataMap = new HashMap<String,Object>();
 				List<String> titles = new ArrayList<String>();
 				titles.add("用户名"); 		//1

@@ -110,6 +110,7 @@ public class CutController extends BaseController {
         pd.put("CUT_REPORT_BUILD_TIME", Tools.date2Str(new Date())); //创建时间
         pd.put("CUT_REPORT_RESP_P",Jurisdiction.getUsername());//获取当前操作用户
         cutService.saveC(pd);
+
         mv.addObject("msg","success");
         mv.setViewName("save_result");
         return mv;

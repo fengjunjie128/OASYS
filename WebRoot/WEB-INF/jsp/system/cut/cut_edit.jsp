@@ -26,6 +26,7 @@
 	
 	//保存
 	function save(){
+
 			if($("#CUT_TITLE").val()==""){
 			$("#CUT_TITLE").tips({
 				side:3,
@@ -101,6 +102,8 @@
             return false;
         }
 
+        $("#loadgif").show();
+        window.location.href="load.jsp";
 		$("#Form").submit();
 	}
 
@@ -217,18 +220,19 @@
 
 
 
-											<tr>
-												<td style="text-align: center;" colspan="10">
-													<a class="btn btn-mini btn-primary" onclick="save();">保存</a>
+												<td  style="text-align: center;" colspan="10">
+													<a id="submitBtn" class="btn btn-mini btn-primary" onclick="save();">保存</a>
 													<a class="btn btn-mini btn-danger" onclick="top.Dialog.close();">取消</a>
 												</td>
 											</tr>
 										</table>
 
 									</div>
-									
+
 									<div id="zhongxin2" class="center" style="display:none"><br/><br/><br/><br/><br/><img src="static/images/jiazai.gif" /><br/><h4 class="lighter block green">提交中...</h4></div>
-									
+									<div id="loadgif"  style="width:150px;height:150px;position:absolute;top:94%;left:40%;">
+										　　<img  alt="加载中..." width:150p height:150px src="<%=basePath%>temp/defaultverificationcode.jpg"/>
+									</div>
 								</form>
 								
 					</div>
@@ -238,7 +242,8 @@
 			</div>
 			<!-- /.page-content -->
 		</div>
-	</div>	
+	</div>
+
 </div>
 	<!-- 页面底部js¨ -->
 	<%@ include file="../index/foot.jsp"%>
@@ -256,9 +261,13 @@
 	<script type="text/javascript" src="static/js/jquery.tips.js"></script>
 </body>
 	<script type="text/javascript">
-	$(top.hangge());
-	
-	$(function() {
+
+		$(document).ready(function () { $("#loadgif").hide();});
+
+		$(top.hangge());
+
+
+		$(function() {
 
 
         //日期框
@@ -292,6 +301,8 @@
 			});
 		}
 	});
+
+
 </script>
 
 </html>

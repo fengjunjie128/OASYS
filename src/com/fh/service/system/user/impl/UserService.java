@@ -57,7 +57,12 @@ public class UserService implements UserManager{
 	public PageData findByUsername(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("UserMapper.findByUsername", pd);
 	}
-	
+
+	@Override
+	public PageData findIDByUsername(PageData pd) throws Exception {
+		return (PageData)dao.findForObject("UserMapper.findIDByUsername", pd);
+	}
+
 	/**列出某角色下的所有用户
 	 * @param pd
 	 * @return

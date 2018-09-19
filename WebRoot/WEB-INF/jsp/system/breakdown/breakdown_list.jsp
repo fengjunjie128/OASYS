@@ -133,7 +133,9 @@
                                     </td>
                                     <td class='center'>${vs.index+1}</td>
                                     <td class="center">${var.BK_ID}</td>
-                                    <td class="center">${var.BK_TITLE}</td>
+                                    <td class="cneter">
+                                        <a href = "javascript:;" onclick="edit('${var.BK_ID}');">${var.BK_TITLE}</a>
+                                    </td>
                                     <td class="center">${var.BK_TIME}</td>
                                     <td class="center">${var.BK_PROCESS_P}</td>
                                     <td class="center">${var.BK_REPORT_P}</td>

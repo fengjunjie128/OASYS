@@ -250,7 +250,18 @@
 			and USERNAME != #{USERNAME} 
 		</if>
 	</select>
-	
+
+	<!-- 通过user_name获取id -->
+	<select id="findIDByUsername" parameterType="pd" resultType="pd" >
+		select
+		USER_ID
+		from
+		<include refid="tableName"></include>
+		where
+		USERNAME = #{USERNAME}
+	</select>
+
+
 	<!-- 通过user_id获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd" >
 		select 

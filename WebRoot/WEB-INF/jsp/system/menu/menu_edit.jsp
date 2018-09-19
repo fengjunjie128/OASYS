@@ -112,6 +112,7 @@
 									<a class="btn btn-mini btn-primary" onclick="save();">保存</a>
 									<a class="btn btn-mini btn-danger" onclick="goback('${MENU_ID}');">取消</a>
 								</div>
+
 							</div>
 							<div class="hr hr-18 dotted hr-double"></div>
 						</form>
@@ -144,7 +145,8 @@
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
 		$(top.hangge());
-		
+
+	$(document).ready(function () { $("#loadgif").hide();});
 		//返回
 		function goback(MENU_ID){
 			top.jzts();
@@ -195,6 +197,8 @@
 				$("#menuOrder").val(1);
 				return false;
 			}
+
+
 			$("#menuForm").submit();
 		}
 		

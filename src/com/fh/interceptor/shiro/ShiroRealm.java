@@ -22,7 +22,7 @@ public class ShiroRealm extends AuthorizingRealm {
 	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-		System.out.println("---ShiroRealm---");
+
 		 String username = (String)token.getPrincipal();  				//得到用户名 
 	     String password = new String((char[])token.getCredentials()); 	//得到密码
 	     if(null != username && null != password){

@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="static/ace/css/datepicker.css" /><!-- 日期框 -->
 
     <script type="text/javascript">
-
-
         //保存
         function saveB(){
             if($("#BK_TITLE").val()==""){
@@ -108,6 +106,8 @@
                 });
                 return false;
             }
+
+            $("#loadgif").show();
 
             $("#Form").submit();
         }
@@ -252,12 +252,15 @@
                                             <a class="btn btn-mini btn-primary" onclick="saveB();">保存</a>
                                             <a class="btn btn-mini btn-danger" onclick="top.Dialog.close();">取消</a>
                                         </td>
+
                                     </tr>
                                 </table>
                             </div>
 
                             <div id="zhongxin2" class="center" style="display:none"><br/><br/><br/><br/><br/><img src="static/images/jiazai.gif" /><br/><h4 class="lighter block green">提交中...</h4></div>
-
+                            <div id="loadgif"  style="width:150px;height:150px;position:absolute;top:94%;left:40%;">
+                                　　<img  alt="加载中..."  src="<%=basePath%>temp/defaultverificationcode.jpg"/>
+                            </div>
                         </form>
 
                     </div>
@@ -285,6 +288,9 @@
 </body>
 <script type="text/javascript">
     $(top.hangge());
+
+
+    $(document).ready(function () { $("#loadgif").hide();});
 
     $(function() {
 

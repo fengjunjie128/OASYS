@@ -54,7 +54,7 @@
 	        });
 			return false;
 		}
-		
+        $("#loadgif").show();
 		$("#Form").submit();
 	}
 	
@@ -120,7 +120,9 @@
 									</div>
 									
 									<div id="zhongxin2" class="center" style="display:none"><br/><br/><br/><br/><br/><img src="static/images/jiazai.gif" /><br/><h4 class="lighter block green">提交中...</h4></div>
-									
+									<div id="loadgif"  style="width:150px;height:150px;position:absolute;top:80%;left:40%;">
+										　　<img  alt="加载中..."  src="<%=basePath%>temp/defaultverificationcode.jpg"/>
+									</div>
 								</form>
 								
 					</div>
@@ -146,7 +148,9 @@
 	
 	<script type="text/javascript">
 	$(top.hangge());
-	
+
+    $(document).ready(function () { $("#loadgif").hide();});
+
 	$(function() {
 		//下拉框
 		if(!ace.vars['touch']) {

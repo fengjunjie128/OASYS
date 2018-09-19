@@ -141,6 +141,7 @@ public class BreakdownController extends BaseController {
             List<PageData> subsysList =subsysService.listAllsubsys(pd);;	//列出子系统列表
             List<PageData> userList = userService.listAllUser(pd);	//列出用户列表
             pd=breakdownService.findbyIdB(pd);
+
             mv.addObject("userList", userList);
             mv.addObject("subsysList", subsysList);
             mv.setViewName("system/breakdown/breakdown_edit");

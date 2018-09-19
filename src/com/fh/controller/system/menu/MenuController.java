@@ -50,14 +50,13 @@ public class MenuController extends BaseController {
 			String MENU_ID = (null == pd.get("MENU_ID") || "".equals(pd.get("MENU_ID").toString()))?"0":pd.get("MENU_ID").toString();
 
 			List<Menu> menuList = menuService.listSubMenuByParentId(MENU_ID);
-			System.out.println("menulist"+menuList.toString());
 			mv.addObject("pd", menuService.getMenuById(pd));	//传入父菜单所有信息
 			mv.addObject("MENU_ID", MENU_ID);
 			mv.addObject("MSG", null == pd.get("MSG")?"list":pd.get("MSG").toString()); //MSG=change 则为编辑或删除后跳转过来的
 			mv.addObject("menuList", menuList);
 			mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
 			mv.setViewName("system/menu/menu_list");
-			System.out.println("mv的值"+mv.toString());
+
 		} catch(Exception e){
 			logger.error(e.toString(), e);
 		}
@@ -80,8 +79,7 @@ public class MenuController extends BaseController {
 			mv.addObject("pds", menuService.getMenuById(pd));	//传入父菜单所有信息
 			mv.addObject("MENU_ID", MENU_ID);					//传入菜单ID，作为子菜单的父菜单ID用
 			mv.addObject("MSG", "add");							//执行状态 add 为添加
-			System.out.println(MENU_ID);
-			System.out.println(mv.toString());
+
 			mv.setViewName("system/menu/menu_edit");
 		} catch(Exception e){
 			logger.error(e.toString(), e);

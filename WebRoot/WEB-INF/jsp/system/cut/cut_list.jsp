@@ -106,7 +106,10 @@
 										</td>
 										<td class='center'>${vs.index+1}</td>
 										<td class="center">${var.CUT_ID}</td>
-										<td class="center">${var.CUT_TITLE}</td>
+										<td class="cneter">
+											<a href = "javascript:;" onclick="edit('${var.CUT_ID}');">${var.CUT_TITLE}</a>
+										</td>
+
 										<td class="center">${var.CUT_TIME}</td>
 										<td class="center">${var.CUT_RESP_P}</td>
 										<td class="center">${var.IT_CUT_RESP_P}</td>
