@@ -327,7 +327,6 @@ public class LoginController extends BaseController {
 		pd.put("SYSNAME", Tools.readTxtFile(Const.SYSNAME)); //读取系统名称
 		mv.setViewName("system/index/login");
 		mv.addObject("pd",pd);
-		System.out.println("==============4==="+mv);
 		return mv;
 	}
 	

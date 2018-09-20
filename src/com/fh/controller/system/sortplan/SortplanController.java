@@ -134,7 +134,7 @@ public class SortplanController extends BaseController {
             List<PageData> userList = userService.listAllUser(pd);	//列出用户列表
             pd = sortplanManager.findByIdS(pd);
             mv.addObject("userList", userList);
-            mv.setViewName("system/sortplan/sortplan_edit");
+            mv.setViewName("system/sortplan/sortplan_view");
             mv.addObject("msg", "chaS");
             mv.addObject("pd", pd);
         } catch (Exception e) {
@@ -161,23 +161,7 @@ public class SortplanController extends BaseController {
 
     }
 
-    /**修改切割操作
-     * @param
-     * @throws Exception
-     */
 
-    @RequestMapping(value = "/chaS")
-    public ModelAndView chaS() throws Exception{
-        if(!Jurisdiction.buttonJurisdiction(menuUrl, "chaS")){return null;} //校验权限
-        logBefore(logger, Jurisdiction.getUsername()+"查看信息");
-        ModelAndView mv = this.getModelAndView();
-        PageData pd = new PageData();
-        pd = this.getPageData();
-        mv.addObject("msg","success");
-        mv.setViewName("save_result");
-        return mv;
-
-    }
     /**删除切割操作
      * @param
      * @throws Exception

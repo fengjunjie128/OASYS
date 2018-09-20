@@ -337,7 +337,7 @@
         top.jzts();
         var diag = new top.Dialog();
         diag.Drag=true;
-        diag.Title ="编辑";
+        diag.Title ="详细信息";
         diag.URL = '<%=basePath%>sortplan/gochaS.do?SP_ID='+Id;
         diag.Width = 600;
         diag.Height = 465;

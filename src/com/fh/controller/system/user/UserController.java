@@ -133,7 +133,7 @@ public class UserController extends BaseController{
 		mv.addObject("pd", pd);
 		mv.addObject("roleList", roleList);
 		mv.addObject("groupList", groupList);
-		System.out.println("------"+groupList);
+
 		return mv;
 	}
 	
@@ -154,7 +154,6 @@ public class UserController extends BaseController{
 		pd.put("SKIN", "default");
 		pd.put("RIGHTS", "");		
 		pd.put("PASSWORD", new SimpleHash("SHA-1", pd.getString("USERNAME"), pd.getString("PASSWORD")).toString());	//密码加密
-		System.out.println("---------pd-----"+pd);
 		if(null == userService.findByUsername(pd)){	//判断用户名是否存在
 			userService.saveU(pd); 					//执行保存
 			mv.addObject("msg","success");

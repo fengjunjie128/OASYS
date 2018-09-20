@@ -69,7 +69,6 @@ public class AppuserController extends BaseController {
 			mv.addObject("roleList", roleList);
 			mv.addObject("pd", pd);
 			mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
-			System.out.println("appuser-----------"+mv.toString());
 
 		} catch(Exception e){
 			logger.error(e.toString(), e);
